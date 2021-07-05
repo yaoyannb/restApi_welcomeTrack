@@ -1,0 +1,22 @@
+{
+  "name": "restapi_welcometrack",
+  "version": "1.0.0",
+  "description": "A REST API to get data from the elastic search index created for welcomeTrack homework",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Yao BOHOUSSOU",
+  "license": "ISC",
+  "dependencies": {
+    "@elastic/elasticsearch": "^7.13.0",
+    "@types/node": "^16.0.0",
+    "express": "^4.17.1",
+    "typescript": "^4.3.5"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.28.1",
+    "@typescript-eslint/parser": "^4.28.1",
+    "eslint": "^7.30.0"
+  }
+}
