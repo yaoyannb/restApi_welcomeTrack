@@ -18,7 +18,6 @@ app.get("/:index_name", async (req, res) => {
 		index: index
 	});
 	res.send(result_infos);
-	//res.send(` GET /${index} `);
 })
 
 app.delete("/:index_name", async (req, res) => {
@@ -26,7 +25,6 @@ app.delete("/:index_name", async (req, res) => {
 	let result_delete = await client.indices.delete({
 		index: index	
 	});
-	//res.send(` DELETE /${index} `);
 	res.send(result_delete);
 })
 
@@ -47,7 +45,6 @@ app.get("/:index_name/:doc_type", async (req, res) => {
 		sortTab=["no",0];
 
 		res.send("refresh = "+ result_delete);
-                //console.log("refresh=  " + result_delete);
 	}
 
 	else if(pitid=="no")
@@ -65,10 +62,9 @@ app.get("/:index_name/:doc_type", async (req, res) => {
 		{
 			let result_search= await  client.search(
 				{
-					index: ""/*index*/,
+					index: "",
 					size:100,
 					type: doc_type,
-					//sort: "id.keyword,:asc",
 					body: { 
 						query: {match_all:{}},
 						pit:{id:pitid, keep_alive:"1m"},
@@ -96,7 +92,7 @@ app.get("/:index_name/:doc_type", async (req, res) => {
 		
 		let result_search= await  client.search(
 			{
-				index: ""/*index*/,
+				index: "",
 				size:100,
 				type: doc_type,
 				body: { 
@@ -119,7 +115,6 @@ app.get("/:index_name/:doc_type", async (req, res) => {
 
 
 
-//        res.send(` GET /${index}/${doc_type} `);
 })
 
 
